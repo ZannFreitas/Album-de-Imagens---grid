@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt.br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rosana Freitas">
+    <title>Álbum de Imagens com Grid</title>
+
+    <style>
+
+    body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    }
+
+    header{
+    text-align: center;
+    background-color: rgb(43, 144, 226);
+    color: white;
+    padding: 0.4em 0;
+    }
+
+    .gallery-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr); /*Define 4 colunas iguais*/
+    grid-auto-rows: 150px; /*Altura padrão de cada linha*/
+    gap: 10px; /*Espaçamento entre os itens*/
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    }
+
+    .gallery-item{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    /*Tamanhos diferentes para alguns itens*/
+    .gallery-item:nth-child(1){
+        grid-column: span 2; /*Ocupa 2 colunas*/
+        grid-row: span 2; /*Ocupa 2 linhas*/
+    }
+
+    .gallery-item:nth-child(4){
+        grid-column: span 2; /*Ocupa 2 colunas*/
+    }
+
+    .gallery-item:nth-child(5){
+        grid-row: span 2; /*Ocupa 2 linhas*/
+    }
+
+    .gallery-item:nth-child(6){
+    grid-row: span 2; /*Ocupa 2 linhas*/
+    } 
+    
+    
+    .gallery-item:hover img{
+    transform:scale(1.1);
+    }
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+
+        <h1>Álbum de Imagens com Grid</h1>
+    </header>
+
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="estrela-cadente.jpg" alt="Estrela cadente"></div>
+        <div class="gallery-item"><img src="ceu-do-norte.jpg" alt="Céu do Norte"></div>
+        <div class="gallery-item"><img src="campo-manhã.jpg" alt="Campo pela manhã"></div>
+        <div class="gallery-item"><img src="passaro-voando.jpg" alt="Pássaro voando"></div>
+        <div class="gallery-item"><img src="flor-azul.jpg" alt="Flor azul"></div>
+        <div class="gallery-item"><img src="gato-na-janela.png" alt="Gato na janela"></div>
+        <div class="gallery-item"><img src="arvore-de-natal.jpg" alt="Árvore de Natal"></div>
+        <div class="gallery-item"><img src="flor-de-natal.jpg" alt="Flor de Natal"></div>
+        <div class="gallery-item"><img src="vermelho-arvore-de-natal.png" alt="Cartão de Natal vermelho"></div>
+        <div class="gallery-item"><img src="papai-noel.jpg" alt="Papai Noel"></div>
+    </div>
+</body>
+</html>
